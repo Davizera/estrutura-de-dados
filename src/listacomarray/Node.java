@@ -98,16 +98,16 @@ public class Node {
            return ;
        else{
            ListNode newElement = new ListNode(element,null,null);
-           ListNode iteracoes = header.next;
-           for(int i =0; i<index; i++){
-               iteracoes=iteracoes.next;
+           if(index==0){
+               header.next = newElement;
+               ListNode tmp = head;
+               ListNode tmp2=head.next;
+               head = newElement;
+               head.previous=header;
+               head.next=tmp;
+               tmp.next=tmp2;
+               tmp.previous=head;
            }
-           ListNode tmp1 =iteracoes.next;
-           ListNode tmp2 = iteracoes;
-           newElement.next = iteracoes.next;
-           newElement=iteracoes;
-           tmp1.previous = newElement;
-           tmp2.next = newElement;
        }
    }
    
@@ -155,8 +155,7 @@ public class Node {
                 if (index == size-1) {
                     trailer.previous = trailer.previous.previous;
                     tail=trailer.previous;
-                    tail.next = trailer.previous.next;
-                    
+                    tail.next = trailer;                    
                     size--;
                     return true;
                 }
