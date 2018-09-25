@@ -8,7 +8,9 @@ public class ListaEncadeadaCircular {
         size=0;
         head=tail=previous=null;
     }
-    public int size(){return size;}
+    public int size(){
+        return size;
+    }
     
     public boolean isEmpty(){
         return (head==null);
@@ -16,10 +18,17 @@ public class ListaEncadeadaCircular {
     
     public void addElement(Object Element){
         ClasseNo newElement = new ClasseNo(Element,null);
-        if(head==null){head = newElement;
-        tail=newElement;}
+        if(head==null){
+            head = newElement;
+            tail=newElement;
+           
+        }
         else{
-            tail.next=newElement;}
+            tail.next=newElement;
+           
+
+
+        }
         tail=newElement;
         size++;
     }
@@ -87,7 +96,10 @@ public class ListaEncadeadaCircular {
         
     }
     public void getTail(){
-        System.out.println(tail.next);
+        System.out.println(tail.element);
+    }
+    public void getHead(){
+        System.out.println(head.element);
     }
     
 }

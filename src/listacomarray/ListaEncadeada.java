@@ -112,11 +112,11 @@ public class ListaEncadeada {
         previous=header;
         for (int i=0;i<size;i++) {
            if (i==index)
-              return ;
+              return header;
            previous=itr;
            itr=itr.next;
         }
-        return ;
+        return null;
     }
 
   
